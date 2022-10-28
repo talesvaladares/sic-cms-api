@@ -20,6 +20,7 @@ builder.Services.AddDbContext<DataContext>(options =>
 
 // injeção de dependencias
 builder.Services.AddScoped<IMenuService, MenuService>();
+builder.Services.AddScoped<IRecursoService, RecursoService>();
 
 var app = builder.Build();
 

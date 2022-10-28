@@ -9,7 +9,25 @@ namespace sic_cms.Helpers {
         public DataContext(DbContextOptions<DataContext> options) : base(options) {}
 
         public DbSet<Menu> Menu { get; set; }
-      
+
+        public DbSet<Recurso> Recurso { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder) {
+
+            modelBuilder.Entity<Recurso>(entity => {
+                entity.HasKey(e => e.Codigo)
+                  .HasName("PK_Recurso_1");
+            });
+
+
+        }
+
+
+
+
+
+
 
     }
 }
